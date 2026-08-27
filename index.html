@@ -49,9 +49,11 @@ linear-gradient(225deg,#170a23 25%,transparent 25%) 0 0/72px 72px}
 .tier{border:1px solid #6d4088;background:#15091f;padding:20px 10px;text-align:center}.tier .gem{font-size:34px}.tier strong{display:block;font-size:20px;margin:8px}.tier span{color:var(--muted);font-size:12px}
 .tier a{display:block;margin-top:15px;padding:10px;background:#61317f;color:white;text-decoration:none;font-size:12px;font-weight:900}
 .note{text-align:center;border-top:1px solid #4d2d61;margin-top:18px;padding-top:15px;color:#cfbdd9;font-family:monospace}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:stretch}.about-copy{padding:10px 4px}.about-copy h2{font-family:monospace;font-size:26px;margin:0 0 12px}.about-copy p{color:var(--muted);line-height:1.7}.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{border:1px solid #6d4088;background:#15091f;padding:20px;text-align:center}.stat strong{display:block;color:#d08af5;font-size:28px}.stat span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:14px}.rule{border-left:3px solid #9a55d4;background:#15091f;padding:18px}.rule strong{display:block;margin-bottom:6px;color:#fff}.rule span{color:var(--muted);font-size:14px;line-height:1.55}
 footer{border-top:1px solid #4e2c61;background:#0b0411;padding:28px 7%;display:flex;justify-content:space-between;align-items:center;color:#a997b1;font-size:12px}.footlogo{font-size:20px;color:#b974eb;font-weight:900}
 @media(max-width:900px){.navlinks{display:none}.merch{grid-template-columns:repeat(2,1fr)}.support-grid{grid-template-columns:1fr 1fr}.support-intro{grid-column:span 2}}
-@media(max-width:560px){nav{padding:0 4%}.join{padding:10px}.brand img{width:95px}.tag{font-size:16px}.merch{grid-template-columns:1fr}.support-grid{grid-template-columns:1fr}.support-intro{grid-column:auto}.btn{min-width:170px}.section{padding:18px 12px}footer{display:block;text-align:center;line-height:2}}
+@media(max-width:560px){nav{padding:0 4%}.join{padding:10px}.brand img{width:95px}.tag{font-size:16px}.merch{grid-template-columns:1fr}.support-grid,.about-grid,.rules{grid-template-columns:1fr}.support-intro{grid-column:auto}.btn{min-width:170px}.section{padding:18px 12px}footer{display:block;text-align:center;line-height:2}}
 </style>
 </head>
 <body>
@@ -69,7 +71,7 @@ footer{border-top:1px solid #4e2c61;background:#0b0411;padding:28px 7%;display:f
   <img class="hero-logo" src="fracture-logo.png" alt="Fracture SMP">
   <div class="tag">⚔ SURVIVE. BUILD. CONQUER. ⚔</div>
   <p>A Minecraft SMP where anything can happen.<br>Join the fracture.</p>
-  <a class="btn" href="YOUR_MINECRAFT_SERVER_LINK">🌳 JOIN THE SMP</a>
+  <a class="btn" href="https://discord.gg/CcexUKJ4K">🌳 JOIN THE SMP</a>
   <a class="btn alt" href="https://discord.gg/CcexUKJ4K">🎮 DISCORD SERVER</a>
  </div>
 </section>
@@ -78,23 +80,35 @@ footer{border-top:1px solid #4e2c61;background:#0b0411;padding:28px 7%;display:f
 <section class="section" id="merch">
  <h2>✦ OFFICIAL MERCH ✦</h2><p class="lead">Rep the Fracture. Support the SMP.</p>
  <div class="merch">
-  <article class="card"><div class="product">👕</div><h3>Fracture SMP Hoodie</h3><div class="price">$34.99</div><a class="buy" href="YOUR_HOODIE_LINK">🛒 BUY NOW</a></article>
-  <article class="card"><div class="product">👕</div><h3>Fracture SMP T-Shirt</h3><div class="price">$19.99</div><a class="buy" href="YOUR_SHIRT_LINK">🛒 BUY NOW</a></article>
-  <article class="card"><div class="product">✨</div><h3>Fracture SMP Sticker</h3><div class="price">$4.99</div><a class="buy" href="YOUR_STICKER_LINK">🛒 BUY NOW</a></article>
-  <article class="card"><div class="product">☕</div><h3>Fracture SMP Mug</h3><div class="price">$14.99</div><a class="buy" href="YOUR_MUG_LINK">🛒 BUY NOW</a></article>
+  <article class="card"><div class="product">👕</div><h3>Fracture SMP Hoodie</h3><div class="price">$34.99</div><a class="buy" href="https://discord.gg/CcexUKJ4K">🛒 ASK IN DISCORD</a></article>
+  <article class="card"><div class="product">👕</div><h3>Fracture SMP T-Shirt</h3><div class="price">$19.99</div><a class="buy" href="https://discord.gg/CcexUKJ4K">🛒 ASK IN DISCORD</a></article>
+  <article class="card"><div class="product">✨</div><h3>Fracture SMP Sticker</h3><div class="price">$4.99</div><a class="buy" href="https://discord.gg/CcexUKJ4K">🛒 ASK IN DISCORD</a></article>
+  <article class="card"><div class="product">☕</div><h3>Fracture SMP Mug</h3><div class="price">$14.99</div><a class="buy" href="https://discord.gg/CcexUKJ4K">🛒 ASK IN DISCORD</a></article>
  </div>
- <div class="view"><a class="smallbtn" href="YOUR_MERCH_STORE_LINK">VIEW ALL MERCH ›</a></div>
+ <div class="view"><a class="smallbtn" href="https://discord.gg/CcexUKJ4K">VIEW ALL MERCH ›</a></div>
+</section>
+
+<section class="section" id="about">
+ <div class="about-grid">
+  <div class="about-copy"><h2>THE FRACTURE</h2><p>Fracture SMP is a creator-focused Minecraft community built around stories, rivalries, ambitious builds, and the unexpected moments that make a world worth remembering.</p></div>
+  <div class="about-stats"><div class="stat"><strong>24/7</strong><span>World online</span></div><div class="stat"><strong>1.21+</strong><span>Minecraft Java</span></div><div class="stat"><strong>100%</strong><span>Community driven</span></div><div class="stat"><strong>∞</strong><span>Stories to tell</span></div></div>
+ </div>
 </section>
 
 <section class="section" id="donate">
  <div class="support-grid">
   <div class="support-intro"><h2>SUPPORT FRACTURE SMP</h2><p>Donations help keep the server running, improve the experience, and bring new content to the SMP!</p></div>
-  <div class="tier"><div class="gem">🟡</div><strong>$5</strong><span>Supporter</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
-  <div class="tier"><div class="gem">⚪</div><strong>$10</strong><span>Supporter</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
-  <div class="tier"><div class="gem">💎</div><strong>$25</strong><span>Champion</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
-  <div class="tier"><div class="gem">🟢</div><strong>$50+</strong><span>Legend</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
+  <div class="tier"><div class="gem">🟡</div><strong>$5</strong><span>Supporter</span><a href="https://discord.gg/CcexUKJ4K">DONATE IN DISCORD</a></div>
+  <div class="tier"><div class="gem">⚪</div><strong>$10</strong><span>Supporter</span><a href="https://discord.gg/CcexUKJ4K">DONATE IN DISCORD</a></div>
+  <div class="tier"><div class="gem">💎</div><strong>$25</strong><span>Champion</span><a href="https://discord.gg/CcexUKJ4K">DONATE IN DISCORD</a></div>
+  <div class="tier"><div class="gem">🟢</div><strong>$50+</strong><span>Legend</span><a href="https://discord.gg/CcexUKJ4K">DONATE IN DISCORD</a></div>
  </div>
  <div class="note">♥ Every donation is appreciated more than you know!</div>
+</section>
+
+<section class="section" id="rules">
+ <h2>SERVER RULES</h2><p class="lead">Keep the world welcoming, competitive, and worth coming back to.</p>
+ <div class="rules"><div class="rule"><strong>NO UNCONSENTED GRIEFING</strong><span>Do not modify, destroy, or loot another player's builds without direct permission.</span></div><div class="rule"><strong>ZERO-TOLERANCE CHEATING</strong><span>External clients, x-ray packs, exploits, and scripts result in a permanent ban.</span></div><div class="rule"><strong>BUILD WITH RESPECT</strong><span>Offensive or explicit builds are not welcome. Staff may remove them.</span></div><div class="rule"><strong>CREATE SOMETHING</strong><span>Fracture is built for active creators. Keep contributing to the story and community.</span></div></div>
 </section>
 </div>
 
