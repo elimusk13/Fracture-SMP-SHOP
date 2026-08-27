@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fracture SMP</title>
+<style>
+:root{
+  --bg:#090311; --panel:#12081e; --panel2:#1a0d29; --purple:#9a55d4;
+  --purple2:#5f287d; --text:#f5eff8; --muted:#c1b5c9; --line:#744292;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:
+linear-gradient(rgba(7,2,13,.87),rgba(7,2,13,.97)),
+repeating-linear-gradient(90deg,transparent 0 64px,rgba(139,73,173,.05) 64px 128px),
+repeating-linear-gradient(0deg,transparent 0 64px,rgba(139,73,173,.05) 64px 128px),
+var(--bg);
+color:var(--text);font-family:Arial,Helvetica,sans-serif}
+nav{height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;
+background:rgba(8,3,15,.93);border-bottom:1px solid #4e2b65;position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:2px}
+.brand img{width:115px;height:48px;object-fit:contain}
+.navlinks{display:flex;gap:29px}.navlinks a{color:#ddd0e4;text-decoration:none;font-size:13px;font-weight:900;letter-spacing:.7px}
+.navlinks a:hover{color:#bc78ec}
+.join{border:1px solid #9e63d4;padding:13px 20px;color:white;text-decoration:none;background:#48205e;font-size:12px;font-weight:900}
+.hero{min-height:510px;display:grid;place-items:center;text-align:center;padding:55px 20px;position:relative;overflow:hidden;
+background:
+radial-gradient(circle at 50% 10%,rgba(143,59,210,.38),transparent 25%),
+radial-gradient(circle at 15% 70%,rgba(100,42,143,.32),transparent 26%),
+radial-gradient(circle at 88% 55%,rgba(100,42,143,.28),transparent 25%)}
+.hero:before,.hero:after{content:"";position:absolute;bottom:0;width:32%;height:48%;opacity:.55;background:
+linear-gradient(135deg,#281331 25%,transparent 25%) 0 0/72px 72px,
+linear-gradient(225deg,#170a23 25%,transparent 25%) 0 0/72px 72px}
+.hero:before{left:0}.hero:after{right:0;transform:scaleX(-1)}
+.hero-inner{position:relative;z-index:1}.hero-logo{width:min(650px,88vw);filter:drop-shadow(0 15px 18px #000)}
+.tag{font-family:monospace;font-size:22px;letter-spacing:3px;margin:20px 0 8px}.hero p{color:#d4c7dc;margin:0 0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-width:205px;padding:15px 20px;margin:4px;border:1px solid #9c59d0;color:white;text-decoration:none;background:linear-gradient(180deg,#6c358d,#442054);font-weight:900}
+.btn.alt{background:rgba(13,5,23,.82)}
+.wrap{max-width:1160px;margin:auto;padding:18px 20px 70px}
+.section{border:1px solid #5e3574;background:linear-gradient(145deg,rgba(20,8,31,.95),rgba(12,5,20,.96));padding:26px;margin-top:22px}
+.section h2{text-align:center;font-family:monospace;font-size:30px;letter-spacing:2px;margin:0 0 6px}.section .lead{text-align:center;color:var(--muted);margin:0 0 24px}
+.merch{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{border:1px solid #70428b;background:linear-gradient(160deg,#1a0c29,#100719);padding:12px;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px)}
+.product{height:175px;display:grid;place-items:center;background:radial-gradient(circle,rgba(117,57,150,.32),transparent 60%),#100817;font-size:62px}
+.card h3{text-align:center;font-size:15px;margin:14px 0 7px}.price{text-align:center;color:#bd80e6;font-weight:900;margin-bottom:12px}
+.buy{display:block;text-align:center;padding:11px;background:#67328a;color:white;text-decoration:none;font-size:12px;font-weight:900}
+.view{text-align:center;margin-top:22px}.smallbtn{display:inline-block;padding:12px 42px;background:#311441;border:1px solid #693686;color:white;text-decoration:none;font-size:12px;font-weight:900}
+.support-grid{display:grid;grid-template-columns:1.8fr repeat(4,1fr);gap:14px}.support-intro{padding:20px}.support-intro h2{text-align:left;font-size:26px}.support-intro p{color:var(--muted);line-height:1.55}
+.tier{border:1px solid #6d4088;background:#15091f;padding:20px 10px;text-align:center}.tier .gem{font-size:34px}.tier strong{display:block;font-size:20px;margin:8px}.tier span{color:var(--muted);font-size:12px}
+.tier a{display:block;margin-top:15px;padding:10px;background:#61317f;color:white;text-decoration:none;font-size:12px;font-weight:900}
+.note{text-align:center;border-top:1px solid #4d2d61;margin-top:18px;padding-top:15px;color:#cfbdd9;font-family:monospace}
+footer{border-top:1px solid #4e2c61;background:#0b0411;padding:28px 7%;display:flex;justify-content:space-between;align-items:center;color:#a997b1;font-size:12px}.footlogo{font-size:20px;color:#b974eb;font-weight:900}
+@media(max-width:900px){.navlinks{display:none}.merch{grid-template-columns:repeat(2,1fr)}.support-grid{grid-template-columns:1fr 1fr}.support-intro{grid-column:span 2}}
+@media(max-width:560px){nav{padding:0 4%}.join{padding:10px}.brand img{width:95px}.tag{font-size:16px}.merch{grid-template-columns:1fr}.support-grid{grid-template-columns:1fr}.support-intro{grid-column:auto}.btn{min-width:170px}.section{padding:18px 12px}footer{display:block;text-align:center;line-height:2}}
+</style>
+</head>
+<body>
+<nav>
+ <div class="brand"><img src="fracture-logo.png" alt="Fracture SMP"></div>
+ <div class="navlinks">
+  <a href="#home">HOME</a><a href="#merch">MERCH</a><a href="#donate">DONATE</a><a href="#about">ABOUT</a><a href="#rules">RULES</a>
+  <a href="https://discord.gg/CcexUKJ4K">DISCORD ↗</a>
+ </div>
+ <a class="join" href="https://discord.gg/CcexUKJ4K">JOIN THE SMP</a>
+</nav>
+
+<section class="hero" id="home">
+ <div class="hero-inner">
+  <img class="hero-logo" src="fracture-logo.png" alt="Fracture SMP">
+  <div class="tag">⚔ SURVIVE. BUILD. CONQUER. ⚔</div>
+  <p>A Minecraft SMP where anything can happen.<br>Join the fracture.</p>
+  <a class="btn" href="YOUR_MINECRAFT_SERVER_LINK">🌳 JOIN THE SMP</a>
+  <a class="btn alt" href="https://discord.gg/CcexUKJ4K">🎮 DISCORD SERVER</a>
+ </div>
+</section>
+
+<div class="wrap">
+<section class="section" id="merch">
+ <h2>✦ OFFICIAL MERCH ✦</h2><p class="lead">Rep the Fracture. Support the SMP.</p>
+ <div class="merch">
+  <article class="card"><div class="product">👕</div><h3>Fracture SMP Hoodie</h3><div class="price">$34.99</div><a class="buy" href="YOUR_HOODIE_LINK">🛒 BUY NOW</a></article>
+  <article class="card"><div class="product">👕</div><h3>Fracture SMP T-Shirt</h3><div class="price">$19.99</div><a class="buy" href="YOUR_SHIRT_LINK">🛒 BUY NOW</a></article>
+  <article class="card"><div class="product">✨</div><h3>Fracture SMP Sticker</h3><div class="price">$4.99</div><a class="buy" href="YOUR_STICKER_LINK">🛒 BUY NOW</a></article>
+  <article class="card"><div class="product">☕</div><h3>Fracture SMP Mug</h3><div class="price">$14.99</div><a class="buy" href="YOUR_MUG_LINK">🛒 BUY NOW</a></article>
+ </div>
+ <div class="view"><a class="smallbtn" href="YOUR_MERCH_STORE_LINK">VIEW ALL MERCH ›</a></div>
+</section>
+
+<section class="section" id="donate">
+ <div class="support-grid">
+  <div class="support-intro"><h2>SUPPORT FRACTURE SMP</h2><p>Donations help keep the server running, improve the experience, and bring new content to the SMP!</p></div>
+  <div class="tier"><div class="gem">🟡</div><strong>$5</strong><span>Supporter</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
+  <div class="tier"><div class="gem">⚪</div><strong>$10</strong><span>Supporter</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
+  <div class="tier"><div class="gem">💎</div><strong>$25</strong><span>Champion</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
+  <div class="tier"><div class="gem">🟢</div><strong>$50+</strong><span>Legend</span><a href="YOUR_DONATION_LINK">DONATE</a></div>
+ </div>
+ <div class="note">♥ Every donation is appreciated more than you know!</div>
+</section>
+</div>
+
+<footer>
+ <div><div class="footlogo">🟩 FRACTURE SMP</div>A Minecraft SMP Community</div>
+ <div>HOME · MERCH · DONATE · RULES · <a style="color:#c587f0" href="https://discord.gg/CcexUKJ4K">DISCORD</a></div>
+ <div>© 2026 Fracture SMP</div>
+</footer>
+</body>
+</html>
