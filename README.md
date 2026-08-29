@@ -1,2 +1,2 @@
 # Fracture-SMP-Shop
-Minecraft server PLS Help out
+PLS Try To Support
